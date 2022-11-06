@@ -11,11 +11,13 @@ public class ComprasProducto {
 
     @EmbeddedId
     private ComprasProductoPK id;
+
     private Integer cantidad;
     private Double total;
     private Boolean estado;
 
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
